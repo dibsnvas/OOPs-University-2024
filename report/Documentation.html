@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 3px;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Documentation for Code Modules</h1>
+
+    <div class="section">
+        <h2>1. Package: <code>database</code></h2>
+        <h3>Class: <code>DataInitializer</code></h3>
+        <p>Initializes the database with sample data for testing and development purposes.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>initialize(Database db)</code>: Populates the database with initial data, such as users and courses.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>2. Package: <code>main.menu</code></h2>
+        <h3>Class: <code>AbstractMenu</code></h3>
+        <p>Provides a base class for creating menu-driven interfaces with predefined actions and titles.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>initializeActions()</code>: Initializes the menu's action map with options.</li>
+            <li><code>getMenuTitle()</code>: Returns the title of the menu.</li>
+            <li><code>execute()</code>: Displays the menu and processes user input to execute actions.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Class: <code>StudentMenu</code></h3>
+        <p>Implements a menu for student users to interact with the system, including viewing marks, registering for courses, and managing schedules.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>viewMarks()</code>: Displays the student's marks.</li>
+            <li><code>registerForCourse()</code>: Allows the student to register for a course.</li>
+            <li><code>viewSchedule()</code>: Shows the student's weekly schedule.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Package: <code>users</code></h2>
+        <h3>Interface: <code>Researcher</code></h3>
+        <p>Defines methods for managing research papers, calculating H-Index, and printing papers for researchers.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>addResearchPaper(ResearchPaper paper)</code>: Adds a research paper to the researcher’s list.</li>
+            <li><code>getResearchPapers()</code>: Returns a list of research papers.</li>
+            <li><code>calculateHIndex()</code>: Calculates the H-Index based on citations.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Class: <code>User</code></h3>
+        <p>An abstract base class for all users in the system, including students and employees.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>checkPassword(String password)</code>: Validates the user's password.</li>
+            <li><code>updateNews()</code>: Notifies the user about new updates.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Class: <code>Student</code></h3>
+        <p>Represents a student with functionalities to manage courses, marks, and schedules.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>registerForCourse(Course course)</code>: Registers the student for a course.</li>
+            <li><code>addLessonToSchedule(DayOfWeek day, String lesson)</code>: Adds a lesson to the student's schedule.</li>
+            <li><code>viewSchedule()</code>: Displays the student's schedule.</li>
+            <li><code>addMark(Mark mark)</code>: Adds a mark to the student's record.</li>
+            <li><code>getMarks()</code>: Retrieves all marks for the student.</li>
+            <li><code>getTranscript()</code>: Returns the student's transcript, including GPA and retake requirements.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Class: <code>PhDStudent</code></h3>
+        <p>Represents a PhD student with additional dissertation-related functionalities.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>getDissertationTopic()</code>: Returns the dissertation topic of the PhD student.</li>
+            <li><code>getAdvisorName()</code>: Returns the advisor's name for the dissertation.</li>
+            <li><code>defendDissertation()</code>: Simulates the defense of the dissertation.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Class: <code>MasterStudent</code></h3>
+        <p>Represents a master's student with thesis-related functionalities.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>getThesisTopic()</code>: Returns the thesis topic of the master student.</li>
+            <li><code>submitThesis(Database db)</code>: Submits the master's thesis to the database.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. Package: <code>utilities</code></h2>
+        <h3>Class: <code>Schedule</code></h3>
+        <p>Manages the weekly schedule for students and employees.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>addLesson(DayOfWeek day, String lesson)</code>: Adds a lesson to the specified day.</li>
+            <li><code>removeLesson(DayOfWeek day, String lesson)</code>: Removes a lesson from the specified day.</li>
+            <li><code>getLessons(DayOfWeek day)</code>: Returns the lessons for a specified day.</li>
+            <li><code>getAllLessons()</code>: Retrieves all lessons for the entire week.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Class: <code>Transcript</code></h3>
+        <p>Generates a transcript for students, including GPA calculation and course details.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>calculateGPA()</code>: Calculates the GPA based on marks.</li>
+            <li><code>toString()</code>: Returns a formatted transcript with course details and GPA.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Class: <code>Course</code></h3>
+        <p>Represents a course with details such as lessons and descriptions.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>addLesson(Lesson lesson)</code>: Adds a lesson to the course.</li>
+            <li><code>getLessons()</code>: Retrieves the list of lessons in the course.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Class: <code>Lesson</code></h3>
+        <p>Represents a lesson with attributes like name, type, day, and time.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>getName()</code>: Returns the name of the lesson.</li>
+            <li><code>getType()</code>: Retrieves the type of the lesson (e.g., Lecture, Practice).</li>
+            <li><code>getDay()</code>: Returns the day the lesson is scheduled.</li>
+            <li><code>getTime()</code>: Retrieves the time of the lesson.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h3>Class: <code>Mark</code></h3>
+        <p>Represents a student's mark for a course.</p>
+        <h4>Key Methods:</h4>
+        <ul>
+            <li><code>getMaxScore(String markType)</code>: Returns the maximum score possible for a mark type.</li>
+            <li><code>getScore()</code>: Retrieves the score for the mark.</li>
+        </ul>
+    </div>
+</body>
+</html>
